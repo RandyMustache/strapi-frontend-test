@@ -9,7 +9,7 @@ class Product extends Component {
   }
 
   async componentDidMount() {
-    let response = await fetch(`https://snipcart-strapi.herokuapp.com/product/${this.props.match.params.id}`)
+    let response = await fetch(`http://localhost:1338/products/${this.props.match.params.id}`)
     let data = await response.json()
     this.setState({
       loading: false,
@@ -23,7 +23,7 @@ class Product extends Component {
         <div className="product">
           <div className="product__information">
             <h2 className="Product-title">{this.state.product.name}</h2>
-            <img src={`https://snipcart-strapi.herokuapp.com/${this.state.product.image.url}`} />
+            <img src={`http://localhost:1338/${this.state.product.image.url}`} />
             <BuyButton {...this.state} />
           </div>
           <div className="product__description">

@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./styles/app.scss";
 import { Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
 import Product from './components/Product';
 import ProductList from './components/ProductList'
+import Home from './components/Home'
 
 function App() {
   return (
@@ -12,7 +12,9 @@ function App() {
         <Header />
         <main className="App-content">
           <Switch>
-            <Route path="/" exact component={ProductList} />
+
+            <Route path="/" exact component={Home} />
+            <Route path="/product/" exact component={ProductList} />
             <Route path="/product/:id" component={Product} />
           </Switch>
         </main>
